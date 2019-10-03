@@ -1,0 +1,90 @@
+<mjml version="3.3.3">
+  <mj-body background-color="#eee" width="600px">
+    <mj-wrapper padding="20px 20px 30px 20px">
+      
+      <mj-section border-radius="4px 4px 0 0" background-url="https://falcon-email-template-assets.s3-us-west-1.amazonaws.com/tile.png"  padding="50px 40px 15px 40px">
+        <mj-column width="100%">
+          <mj-image padding="0px 0px 0px 0px" align="center" src="https://falcon-email-template-assets.s3-us-west-1.amazonaws.com/logo.png" width="225px" /> </mj-column>
+      </mj-section>
+      <mj-section  border-radius="0 0 4px 4px" background-color="#ffffff" background-repeat="repeat" padding="20px 0" text-align="center">
+
+        <mj-column width="100%" padding="20px 20px 30px">
+          <mj-text padding="0 0 0 0" font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="24px" font-size="22px" font-weight="900" color="#444">
+          Your order is ready to be shipped.
+          </mj-text>
+        </mj-column>
+        
+        <mj-column width="80%" padding="0px 20px">
+          <mj-text container-background-color="#fafafa" padding="15px 20px 15px" font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="left" line-height="20px" font-size="14px"  color="#444">
+          <strong>Order Number:</strong>&nbsp;&nbsp;{!relatedTo.OrderNumber}
+          <br/>
+          <strong>Delivery Date:</strong>&nbsp;&nbsp;&nbsp;<c:ntfy_LocaleDate v_dateValue="{!relatedTo.RouteStop__r.EstimatedArrivalTime__c}" v_dateFormat="EEEE', ' MMMM d"/>
+          <br/>
+          <strong>Arrival Time:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:ntfy_LocaleDate v_dateValue="{!relatedTo.RouteStop__r.EstimatedArrivalTime__c}" v_dateFormat="h:mm a"/>
+          </mj-text>
+        </mj-column>
+        
+        <!--<mj-column  padding="10px 10px" width="40%">
+        	 <mj-text font-weight="700" padding="0 0 5px 0" font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="20px" font-size="14px" color="#444">
+             Order Number:
+            </mj-text>
+          <mj-text padding="0 0 0 0"font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="20px" font-size="14px" color="#444">
+             #0000245
+            </mj-text>
+        </mj-column>
+        
+        <mj-column padding="10px 10px" width="40%">
+        	 <mj-text font-weight="700" padding="0 0 5px 0" font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="20px" font-size="14px" color="#444">
+             Delivery Date:
+            </mj-text>
+          <mj-text padding="0 0 0 0" font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="20px" font-size="14px" color="#444">
+             Tuesday, September 20th
+            </mj-text>
+        </mj-column> -->
+
+        
+        
+        
+
+        <!--
+        <mj-column width="100%" padding-top="15px">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="left" line-height="24px" font-size="15px" color="#444">{!recipient.FirstName}, <br/> <br/> We're looking forward to delivering your order. <br/> <br/> The estimated arrival time for your delivery is: <strong><c:ntfy_LocaleDate v_dateValue="{!relatedTo.RouteStop__r.EstimatedArrivalTime__c}" v_dateFormat="0, date, EEEE MMMM d ' @ '  h:mm a"/></strong>.
+            </mj-text>
+        </mj-column>
+        -->
+        
+        
+     
+        
+        
+        
+        
+        <mj-column width="100%" padding-top="15px">
+        	<mj-table font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+            <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+              <th style="width: 25px; padding: 5px 5px 5px 0;"></th>
+              <th style="text-transform: uppercase; font-size: 10px; letter-spacing:0.5px; padding: 5px 5px 5px 0;">Shipped Items</th>
+            </tr>
+            <apex:repeat value="{!relatedTo.OrderItems}" var="item">
+              <tr>
+                <td style="width: 45px; padding: 3px 5px 3px 0; vertical-align: top;">{!item.Quantity}</td>
+              	<td style="padding: 3px 5px 3px 0;">{!item.Product2.Name}</td>
+              </tr>
+            </apex:repeat>
+          </mj-table>
+        </mj-column>
+        
+        <mj-column width="100%">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="24px" font-size="15px" color="#444">
+          	Thank you for your business, <br/> Falcon 
+          </mj-text>
+        </mj-column>
+      
+        <!--<mj-column padding-top="20px" width="100%">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="16px" font-size="12px" color="#444"> Here is some subtext. Contact information and email info. </mj-text>
+        </mj-column>-->
+        
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

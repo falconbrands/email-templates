@@ -1,0 +1,58 @@
+<mjml version="3.3.3">
+  <mj-body background-color="#eee" width="600px">
+    <mj-wrapper padding="20px 20px 30px 20px">
+      <mj-section border-radius="4px 4px 0 0" background-url="https://falcon-email-template-assets.s3-us-west-1.amazonaws.com/tile.png"  padding="50px 40px 15px 40px">
+        <mj-column width="100%">
+          <mj-image padding="0px 0px 0px 0px" align="center" src="https://falcon-email-template-assets.s3-us-west-1.amazonaws.com/logo.png" width="225px" /> </mj-column>
+      </mj-section>
+      <mj-section  border-radius="0 0 4px 4px" background-color="#ffffff" background-repeat="repeat" padding="20px 0" text-align="center">
+
+        <mj-column width="100%" padding="10px 0 15px">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="24px" font-size="20px" font-weight="900" color="#444">
+          Your order #{!relatedTo.OrderNumber} has been confirmed. </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="left" line-height="24px" font-size="15px" color="#444">{!recipient.FirstName}, <br/> <br/> We've successfully processed your order and are hard at work doing something nice for you that I haven't decided on what to write yet. <br/> <br/> Your estimated delivery date is: <strong><apex:outputText value="{0, date, EEEE MMMM d}"><apex:param value="{!relatedTo.Scheduled_Delivery_Date__c}" /></apex:outputText></strong>.
+            <br/> <br/> Thank you for your business, <br/> Falcon </mj-text>
+        </mj-column>
+        <!--<mj-column width="100%" padding="10px 0">
+          <mj-table font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+            <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+              <th style="padding: 5px 15px 5px 0;">Qty</th>
+              <th style="padding: 5px 15px;">Description</th>
+              <th style="padding: 5px 0 5px 15px;">Unit Price</th>
+              <th style="padding: 5px 0 5px 15px;">TOTAL</th>
+            </tr>
+            <tr>
+              <td style="padding: 5px 15px 5px 0;">1</td>
+              <td style="padding: 5px 15px;">Some item</td>
+              <td style="padding: 5px 0 5px 15px;">$10.00</td>
+              <td style="padding: 5px 0 5px 15px;">$10.00</td>
+            </tr>
+            <tr>
+              <td style="padding: 5px 15px 5px 0;">4</td>
+              <td style="padding: 5px 15px;">Another cool item</td>
+              <td style="padding: 5px 0 5px 15px;">$20.00</td>
+              <td style="padding: 5px 0 5px 15px;">$80.00</td>
+            </tr>
+            <tr>
+              <td style="padding: 5px 15px 5px 0;"></td>
+              <td style="padding: 5px 15px;"></td>
+              <td style="padding: 5px 0 5px 15px;">Excise Tax:</td>
+              <td style="padding: 5px 0 5px 15px;">$10.00</td>
+            </tr>
+            <tr>
+              <td style="padding: 5px 15px 5px 0;"></td>
+              <td style="padding: 5px 15px;"></td>
+              <td style="font-weight: 700; padding: 5px 0 5px 15px;">Grand Total:</td>
+              <td style="font-weight: 700; padding: 5px 0 5px 15px;">$100.00</td>
+            </tr>
+          </mj-table>
+        </mj-column>-->
+        <mj-column padding-top="20px" width="100%">
+          <mj-text font-family="BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif" align="center" line-height="16px" font-size="12px" color="#444"> Here is some subtext. Contact information and email info. </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>
